@@ -13,13 +13,19 @@ import com.activeandroid.annotation.Table;
 @Table(name = "items")
 public class Tweet extends Model {
 	@Column(name = "userId")
-	String userId;
+	public String userId;
+
 	@Column(name = "userHandle")
-	String userHandle;
+	public String userHandle;
+
 	@Column(name = "timestamp")
-	String timestamp;
+	public String timestamp;
+
 	@Column(name = "body")
-	String body;
+	public String body;
+
+	@Column(name = "profileImageUrl")
+	public String profileImageUrl;
 
 	public Tweet() {
 		super();
@@ -33,6 +39,7 @@ public class Tweet extends Model {
 			this.userHandle = object.getJSONObject("user").getString("screen_name");
 			this.timestamp = object.getString("created_at");
 			this.body = object.getString("text");
+			this.profileImageUrl = object.getJSONObject("user").getString("profile_image_url");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

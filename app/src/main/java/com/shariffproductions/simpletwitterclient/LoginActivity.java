@@ -23,8 +23,8 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 
 	@Override
 	public void onLoginSuccess() {
-		Intent i = new Intent(this, TimelineActivity.class);
-		startActivity(i);
+		Intent intent = new Intent(this, TimelineActivity.class);
+		startActivity(intent);
 	}
 
 	@Override
@@ -32,11 +32,7 @@ public class LoginActivity extends OAuthLoginActionBarActivity<RestClient> {
 		e.printStackTrace();
 	}
 
-	// Click handler method for the button used to start OAuth flow
-	// Uses the client to initiate OAuth authorization
-	// This should be tied to a button used to login
 	public void loginToRest(View view) {
 		getClient().connect();
 	}
-
 }
