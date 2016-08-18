@@ -20,7 +20,7 @@ public class TimelineActivity extends AppCompatActivity {
         setContentView(R.layout.activity_timeline);
 
         RestClient client = RestApplication.getRestClient();
-        client.getHomeTimelineTweets(1, new JsonHttpResponseHandler() {
+        client.getHomeTimelineTweets(new JsonHttpResponseHandler() {
             public void onSuccess(int statusCode, Header[] headers, JSONArray jsonArray) {
                 ArrayList<Tweet> tweets = Tweet.fromJson(jsonArray);
             }

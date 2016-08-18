@@ -37,7 +37,7 @@ public class RestClient extends OAuthBaseClient {
 			REST_CALLBACK_URL);
 	}
 
-	public void getHomeTimelineTweets(int numTweets, AsyncHttpResponseHandler handler) {
+	public void getHomeTimelineTweets(AsyncHttpResponseHandler handler) {
 		String apiUrl = getApiUrl("statuses/home_timeline.json");
 		RequestParams params = new RequestParams();
 		params.put("format", "json");
